@@ -1,5 +1,5 @@
 {
-  "app": "dotnet run --project src/ThumbnailGenerator/ThumbnailGenerator.csproj",
+  "app": "dotnet run --project src/Infrastructure/Infrastructure.csproj",
   "watch": {
     "include": [
       "**"
