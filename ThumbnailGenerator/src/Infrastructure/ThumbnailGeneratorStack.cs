@@ -12,8 +12,8 @@ namespace ThumbnailGenerator
         internal ThumbnailGeneratorStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
         {
             // Create buckets
-            var inputBucket = new Bucket(this, "ThumbnailGeneratorInputBucket");
-            var outputBucket = new Bucket(this, "ThumbnailGeneratorOutputBucket");
+            var inputBucket = new Bucket(this, "ThumbnailGeneratorInputBucket", new BucketProps(){RemovalPolicy = RemovalPolicy.DESTROY, AutoDeleteObjects = true});
+            var outputBucket = new Bucket(this, "ThumbnailGeneratorOutputBucket", new BucketProps(){RemovalPolicy = RemovalPolicy.DESTROY, AutoDeleteObjects = true});
 
             // Create Lambda
             var lambdaFunction = new Function(this, "ThumbnailGeneratorImageProcessor", new FunctionProps
